@@ -30,11 +30,16 @@
 	<head>
 		<meta charset="UTF-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  		<title>Toys R URI</title>
-  		<link rel="stylesheet" href="css/style.css">
+  		<title>Food Pantry</title>
+  		<link rel="stylesheet" href= "style.css">
   		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" rel="stylesheet">
+		<style>
+			body {
+				font-family: 'Times New Roman', serif;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -72,6 +77,3 @@
 
 	</body>
 </html>
-
-
-
