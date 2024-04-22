@@ -42,13 +42,14 @@
 		<header>
 			<div class="header-left">
 				<div class="logo">
-					<img src="imgs/logo.png" alt="Toy R URI Logo">
+					<img src="imgs/svdp-transparent.png" alt="SVDP Logo">
       			</div>
 
 	      		<nav>
 	      			<ul>
-	      				<li><a href="index.php">Toy Catalog</a></li>
-	      				<!-- <li><a href="about.php">About</a></li> -->
+	      				<li><a href="index.php">Log In</a></li>
+	      				<li><a href="about.php">About</a></li>
+						<li><a href="inventory.php">Inventory</a></li>
 			        </ul>
 			    </nav>
 		   	</div>
@@ -65,6 +66,7 @@
   				<!-- 
 				  -- TO DO: Fill in the rest of the cards for ALL remaining toys from the db
   				  -->
+
 
   		</main>
 
