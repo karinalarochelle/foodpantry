@@ -55,6 +55,7 @@
 	      				<li><a href="index.php">Log In</a></li>
 	      				<li><a href="about.php">About</a></li>
 						<li><a href="inventory.php">Inventory</a></li>
+						<li><a href="track.php">Track Donation</a></li>
 			        </ul>
 			    </nav>
 		   	</div>

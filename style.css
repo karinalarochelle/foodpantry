@@ -206,3 +206,40 @@
     text-align: justify;
   }
   
+
+  /* Track Donation Section Styles */
+.donation-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.donation-details h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #006AA8;
+}
+
+.donation-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.donation-details th,
+.donation-details td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.donation-details th {
+  background-color: #006AA8;
+  color: #fff;
+}
+
+.donation-details tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.donation-details tbody tr:hover {
+  background-color: #f2f2f2;
+}
