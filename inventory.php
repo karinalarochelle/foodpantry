@@ -60,7 +60,7 @@ $clothing = merge_quantities($clothing, $clothingQuantities);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Pantry</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="decorations.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -77,7 +77,7 @@ $clothing = merge_quantities($clothing, $clothingQuantities);
             <ul>
                 <li><a href="login.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
-                
+
             </ul>
         </nav>
     </div>
