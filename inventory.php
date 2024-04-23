@@ -11,9 +11,9 @@ function get_all_data(PDO $pdo, string $tableName) {
     return $data;
 }
 
-// Fetch quantity for each item based on itemID
+// Fetch quantity for each item from the Items table
 function get_item_quantities(PDO $pdo, string $tableName) {
-    $sql = "SELECT itemID, COUNT(*) as quantity FROM $tableName GROUP BY itemID";
+    $sql = "SELECT itemID, quantity FROM Items";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $quantities = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -25,10 +25,8 @@ $otherNeeds = get_all_data($pdo, 'OtherNeeds');
 $food = get_all_data($pdo, 'Food');
 $clothing = get_all_data($pdo, 'Clothing');
 
-// Get quantities for each item based on itemID
-$otherNeedsQuantities = get_item_quantities($pdo, 'OtherNeeds');
-$foodQuantities = get_item_quantities($pdo, 'Food');
-$clothingQuantities = get_item_quantities($pdo, 'Clothing');
+// Get quantities for each item from the Items table
+$itemQuantities = get_item_quantities($pdo, 'Items');
 
 // Merge quantities with the original data
 function merge_quantities($data, $quantities) {
@@ -48,9 +46,9 @@ function merge_quantities($data, $quantities) {
     return $mergedData;
 }
 
-$otherNeeds = merge_quantities($otherNeeds, $otherNeedsQuantities);
-$food = merge_quantities($food, $foodQuantities);
-$clothing = merge_quantities($clothing, $clothingQuantities);
+$otherNeeds = merge_quantities($otherNeeds, $itemQuantities);
+$food = merge_quantities($food, $itemQuantities);
+$clothing = merge_quantities($clothing, $itemQuantities);
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +74,7 @@ $clothing = merge_quantities($clothing, $clothingQuantities);
         <nav>
             <ul>
                 <li><a href="login.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
+                <li><a href="track.php">Track Donations</a></li>
 
             </ul>
         </nav>
@@ -87,7 +85,6 @@ $clothing = merge_quantities($clothing, $clothingQuantities);
 <main>
 
     <div class="inventory-lookup-container">
-        <h1>All Inventory</h1>
 
         <!-- Food -->
         <div class="inventory-details">
@@ -96,8 +93,10 @@ $clothing = merge_quantities($clothing, $clothingQuantities);
                 <thead>
                 <tr>
                     <th>Item ID</th>
+                    <th>Food</th>
                     <th>Expiration Date</th>
                     <th>Allergens</th>
+
                     <th>Quantity</th>
                 </tr>
                 </thead>
@@ -105,8 +104,10 @@ $clothing = merge_quantities($clothing, $clothingQuantities);
                 <?php foreach ($food as $item): ?>
                     <tr>
                         <td><?= $item['itemID'] ?></td>
+                        <td><?= $item['food'] ?></td>
                         <td><?= $item['expiration_date'] ?></td>
                         <td><?= $item['allergens'] ?></td>
+
                         <td><?= $item['quantity'] ?></td>
                     </tr>
                 <?php endforeach; ?>
@@ -144,8 +145,8 @@ $clothing = merge_quantities($clothing, $clothingQuantities);
                 <thead>
                 <tr>
                     <th>Item ID</th>
-                    <th>Size</th>
                     <th>Type</th>
+                    <th>Size</th>
                     <th>Quantity</th>
                 </tr>
                 </thead>
@@ -153,15 +154,14 @@ $clothing = merge_quantities($clothing, $clothingQuantities);
                 <?php foreach ($clothing as $item): ?>
                     <tr>
                         <td><?= $item['itemID'] ?></td>
-                        <td><?= $item['clothing_size'] ?></td>
                         <td><?= $item['clothing_type'] ?></td>
+                        <td><?= $item['clothing_size'] ?></td>
                         <td><?= $item['quantity'] ?></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
-    </div>
 
 </main>
 

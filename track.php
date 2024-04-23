@@ -21,16 +21,9 @@
         <nav>
             <ul>
                 <li><a href="login.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
                 <li><a href="inventory.php">Inventory</a></li>
             </ul>
         </nav>
-    </div>
-
-    <div class="header-right">
-        <ul>
-            <li><a href="track.php">Track</a></li>
-        </ul>
     </div>
 </header>
 

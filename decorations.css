@@ -242,3 +242,39 @@
   .donation-details tbody tr:hover {
     background-color: #f2f2f2;
   }
+
+  .inventory-details {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.inventory-details h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #006AA8;
+}
+
+.inventory-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventory-details th,
+.inventory-details td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.inventory-details th {
+    background-color: #006AA8;
+    color: #fff;
+}
+
+.inventory-details tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.inventory-details tbody tr:hover {
+    background-color: #f2f2f2;
+}
