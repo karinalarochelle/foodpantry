@@ -15,25 +15,19 @@ require 'includes/database-connection.php';
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     </head>
-    
+
     <body>
         <header>
             <div class="header-left">
                 <div class="logo">
-                    <img src="imgs/logo.png" alt="Toy R URI Logo">
+                    <img src="imgs/svdp-transparent.png" alt="SVDP Logo">
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.php">Toy Catalog</a></li>
-                        <li><a href="about.php">About</a></li>
+                
+                        <li><a href="inventory.php">Inventory Page</a></li>
                     </ul>
                 </nav>
-            </div>
-
-            <div class="header-right">
-                <ul>
-                    <li><a href="inventory.php">Inventory</a></li>
-                </ul>
             </div>
 
         </header>

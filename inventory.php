@@ -80,12 +80,7 @@ $clothing = merge_quantities($clothing, $clothingQuantities);
             </ul>
         </nav>
     </div>
-
-    <div class="header-right">
-        <ul>
-            <li><a href="inventory.php">Check Inventory</a></li>
-        </ul>
-    </div>
+    
 </header>
 
 <main>
