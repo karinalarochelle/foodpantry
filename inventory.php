@@ -109,6 +109,7 @@ $clothing = merge_quantities($clothing, $itemQuantities);
                         <td><?= $item['allergens'] ?></td>
 
                         <td><?= $item['quantity'] ?></td>
+                        <td><button onclick="updateQuantity(<?= $item['itemID'] ?>)">Update</button></td> <!-- Update button -->
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -132,6 +133,7 @@ $clothing = merge_quantities($clothing, $itemQuantities);
                         <td><?= $item['itemID'] ?></td>
                         <td><?= $item['category_name'] ?></td>
                         <td><?= $item['quantity'] ?></td>
+                        <td><button onclick="updateQuantity(<?= $item['itemID'] ?>)">Update</button></td> <!-- Update button -->
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -157,6 +159,7 @@ $clothing = merge_quantities($clothing, $itemQuantities);
                         <td><?= $item['clothing_type'] ?></td>
                         <td><?= $item['clothing_size'] ?></td>
                         <td><?= $item['quantity'] ?></td>
+                        <td><button onclick="updateQuantity(<?= $item['itemID'] ?>)">Update</button></td> <!-- Update button -->
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -164,6 +167,28 @@ $clothing = merge_quantities($clothing, $itemQuantities);
         </div>
 
 </main>
+<script>
+    function updateQuantity(itemID) {
+        var newQuantity = prompt("Enter the new quantity:");
+        if (newQuantity !== null) {
+            // Send the new quantity to a PHP script to update the database
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        console.log(xhr.responseText);
+                        // You can update the UI or display a message here
+                    } else {
+                        console.error("Error:", xhr.status);
+                    }
+                }
+            };
+            xhr.open("POST", "update_quantity.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("itemID=" + itemID + "&quantity=" + newQuantity);
+        }
+    }
+</script>
 
 </body>
 
