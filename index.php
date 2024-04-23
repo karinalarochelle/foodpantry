@@ -13,7 +13,7 @@
 
 // Closing PHP tag  ?> 
 
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 
 	<head>
