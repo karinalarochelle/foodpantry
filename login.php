@@ -26,6 +26,8 @@ require 'includes/database-connection.php';
                     <ul>
                 
                         <li><a href="inventory.php">Inventory Page</a></li>
+
+                        <li><a href="track.php">Track Donations</a></li>
                     </ul>
                 </nav>
             </div>

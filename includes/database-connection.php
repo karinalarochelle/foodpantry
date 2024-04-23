@@ -7,7 +7,7 @@ $port     = '3306';                           // Port is usually 3306 in Hostgat
 $charset  = 'utf8mb4';                       // UTF-8 encoding using 4 bytes of data per char
 
 $username = 'klaroche_karinalaro';     // Enter YOUR cPanel username and user here
-$password = 'csc436_foodpantry';           // Enter YOUR user password here
+$password = '!KaRochelle17';           // Enter YOUR user password here
 
 
 
