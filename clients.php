@@ -129,24 +129,15 @@ foreach ($clients as $client) {
 ?>
 
 <!-- Centered search form -->
-<div class="search-container" style="background-color: #F3F6F4; padding: 10px; border-radius: 10px; margin-left: 720px; margin-right: 620px; margin-top: 50px; border: 3px solid black;">
+<div class="search-container" style="background-color: #F3F6F4; padding: 2%; border-radius: 10px; margin: 5% auto;">
     <form method="GET" action="">
-        <h1 
-            style=
-                "text-align: center; 
-                margin-top: 20px; 
-                margin-bottom: 10px; 
-                /* background-color: #497094; */
-                color:#000000; 
-                padding: 10px; 
-                border-radius: 10px;"
-        > SEARCH CLIENT: </h1>
+        <h1 style="text-align: center; margin-top: 1%; margin-bottom: 1%; color:#000000; padding: 1%; border-radius: 10px;"> SEARCH CLIENT: </h1>
         <input type="text" name="fname" placeholder="Enter First Name...">
         <input type="text" name="lname" placeholder="Enter Last Name...">
         <button type="submit">Search</button>
     </form>
 </div>
-</div>
+
 
 <!-- Display donation information -->
 <div class="donation-details">
