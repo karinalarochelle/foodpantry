@@ -109,13 +109,13 @@ function test_input($data) {
     <header>
         <div class="header-left">
             <div class="logo">
-                <img src="svdp-transparent.png" alt="SVDP Logo">
+                <img src="imgs/svdp-transparent.png" alt="SVDP Logo">
             </div>
         </div>
     </header>
 
     <div class="register-container">
-        <h2>New Volunteer</h2>
+        <h2 style="text-align: center; margin-top: 40px; margin-bottom: 40px; font-size: 44px; color:#006AA8 ">New Volunteer</h2>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <input type="hidden" name="volunteerID" value="<?php echo $volunteerID; ?>">
             <div class="form-group">
@@ -133,7 +133,7 @@ function test_input($data) {
                 <input type="text" id="phone_number" name="phone_number" value="<?php echo $phoneNumber; ?>">
                 <span class="error"><?php echo $phoneNumberErr; ?></span>
             </div>
-            <button type="submit">Create Volunteer</button>
+            <button type="submit" style = "margin-top: 50px; background-color:#006AA8;">Create Volunteer</button>
         </form>
     </div>
 </body>
