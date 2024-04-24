@@ -65,22 +65,43 @@ function test_input($data) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
+        /* Add CSS for centering the login container */
+        .login-container {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Add CSS for centering the header */
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            color: #006AA8;
+            font-size: 50px; /* Increase the font size */
+        }
+
         .form-group {
             text-align: center;
             margin-bottom: 20px;
         }
+
         input[type="text"],
         input[type="password"] {
             width: 400px; /* Enlarge the width of the input fields */
             padding: 20px; /* Add padding for better appearance */
-            margin: 0 auto; /* Center the input fields */
-            display: block; /* Ensure input fields are displayed as block elements */
             font-size: 18px; /* Enlarge the font size */
         }
+
         .error {
             color: red;
         }
+
         button[type="submit"], .register-btn {
+
             display: block;
             margin: 10px auto; /* Center the buttons and add spacing */
             padding: 20px 40px; /* Add padding for better appearance */
@@ -93,6 +114,7 @@ function test_input($data) {
         }
         button[type="submit"]:hover, .register-btn:hover {
             background-color: #0056b3; /* Darker blue color on hover */
+
         }
     </style>
 </head>
@@ -102,11 +124,20 @@ function test_input($data) {
             <div class="logo">
                 <img src="imgs/svdp-transparent.png" alt="SVDP Logo">
             </div>
+                <ul>
+                    <li><a style="font-size: 25px;"> Society of St. Vincent de Paul Ste. Manchester</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
     <div class="login-container">
-        <h2>Login</h2>
+        <img 
+            src="imgs/svdp-transparent.png" 
+            alt="SVDP Logo" 
+            style="width: 190px; height: 190px;"
+        >
+        <h2>Welcome</h2>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <div class="form-group">
                 <label for="username">Username:</label>

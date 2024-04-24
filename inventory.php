@@ -74,8 +74,9 @@ $clothing = merge_quantities($clothing, $itemQuantities);
         <nav>
             <ul>
                 <li><a href="login.php">Home</a></li>
+                <li><a href="inventory.php">Inventory</a></li>
                 <li><a href="track.php">Track Donations</a></li>
-
+                <li><a href="clients.php">Clients</a></li>
             </ul>
         </nav>
     </div>
@@ -98,6 +99,7 @@ $clothing = merge_quantities($clothing, $itemQuantities);
                     <th>Allergens</th>
 
                     <th>Quantity</th>
+                    <th>  </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -125,6 +127,7 @@ $clothing = merge_quantities($clothing, $itemQuantities);
                     <th>Item ID</th>
                     <th>Category</th>
                     <th>Quantity</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -150,6 +153,7 @@ $clothing = merge_quantities($clothing, $itemQuantities);
                     <th>Type</th>
                     <th>Size</th>
                     <th>Quantity</th>
+                    <th>  </th>
                 </tr>
                 </thead>
                 <tbody>
