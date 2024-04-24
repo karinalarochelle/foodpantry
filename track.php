@@ -23,7 +23,7 @@
                 <li><a href="inventory.php">Inventory</a></li>
                 <li><a href="track.php">Track Donations</a></li>
                 <li><a href="clients.php">Clients</a></li>
-                <li><a href="add_volunteer.php">Volunteer</a></li>
+                <li><a href="volunteer.php">Volunteer</a></li>
 
             </ul>
         </nav>
