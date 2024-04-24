@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute([$username, $password, 'CSC436', $volunteerID]);
 
         // Redirect to NewVolunteer page after successful registration
-        header("Location: NewVolunteer.php");
+        header("Location: new_volunteer.php");
         exit;
     }
 }
