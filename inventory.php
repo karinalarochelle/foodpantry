@@ -99,6 +99,7 @@ $clothing = merge_quantities($clothing, $itemQuantities);
                     <th>Allergens</th>
 
                     <th>Quantity</th>
+                    <th>  </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -126,6 +127,7 @@ $clothing = merge_quantities($clothing, $itemQuantities);
                     <th>Item ID</th>
                     <th>Category</th>
                     <th>Quantity</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -151,6 +153,7 @@ $clothing = merge_quantities($clothing, $itemQuantities);
                     <th>Type</th>
                     <th>Size</th>
                     <th>Quantity</th>
+                    <th>  </th>
                 </tr>
                 </thead>
                 <tbody>
