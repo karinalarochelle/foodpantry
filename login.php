@@ -24,10 +24,10 @@ require 'includes/database-connection.php';
                 </div>
                 <nav>
                     <ul>
-                
-                        <li><a href="inventory.php">Inventory Page</a></li>
-
+                        <li><a href="login.php">Home</a></li>
+                        <li><a href="inventory.php">Inventory</a></li>
                         <li><a href="track.php">Track Donations</a></li>
+                        <li><a href="clients.php">Clients</a></li>
                     </ul>
                 </nav>
             </div>
