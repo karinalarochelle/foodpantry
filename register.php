@@ -86,7 +86,7 @@ function test_input($data) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toys R URI - Register</title>
+    <title>Food Pantry - Register</title>
     <link rel="stylesheet" href="decorations.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
