@@ -21,30 +21,32 @@
             border: 1px solid #ccc;
             flex: 1;
             margin-bottom: 15px;
+            margin-top: 15px;
         }
         .search-container button {
             padding: 5px 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
             cursor: pointer;
-            margin: 5px;
+            margin-top: 20px;
             display: block;
             margin-left: auto;
             margin-right: auto;
             width: 100px;
             height: 40px;
+            margin-bottom: 25px;
         }
 
         /* Styles for the add button */
         .add-button {
             padding: 10px;
-            width: 50px;
+            width: 200px;
             height: 50px;
-            border-radius: 50%;
+            border-radius: 20%;
             border: 1px solid #ccc;
             background-color: #f0f0f0;
             cursor: pointer;
-            margin-left: 10px;
+            margin-left: 0px;
         }
 
         /* Style for the clients heading */
@@ -64,6 +66,7 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            
         }
     </style>
 </head>
@@ -126,17 +129,28 @@ foreach ($clients as $client) {
 ?>
 
 <!-- Centered search form -->
-<div class="search-container">
+<div class="search-container" style="background-color: #F3F6F4; padding: 10px; border-radius: 10px; margin-left: 720px; margin-right: 620px; margin-top: 50px; border: 3px solid black;">
     <form method="GET" action="">
+        <h1 
+            style=
+                "text-align: center; 
+                margin-top: 20px; 
+                margin-bottom: 10px; 
+                /* background-color: #497094; */
+                color:#000000; 
+                padding: 10px; 
+                border-radius: 10px;"
+        > SEARCH CLIENT: </h1>
         <input type="text" name="fname" placeholder="Enter First Name...">
         <input type="text" name="lname" placeholder="Enter Last Name...">
         <button type="submit">Search</button>
     </form>
 </div>
+</div>
 
 <!-- Display donation information -->
 <div class="donation-details">
-    <h2 class="clients-heading">Clients <div class="add-button" onclick="addClient()">+</div></h2>
+    <h2 class="clients-heading" style="margin-left: 10px;">Clients <div class="add-button" onclick="addClient()" style="margin-left: 720px;">+</div></h2>
     <table id="clients-table">
         <thead>
             <tr>
