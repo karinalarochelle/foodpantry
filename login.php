@@ -78,8 +78,8 @@ function test_input($data) {
         /* Add CSS for centering the header */
         h2 {
             text-align: center;
-            margin-top: 40px;
-            margin-bottom: 40px;
+            margin-top: 30px;
+            margin-bottom: 30px;
             color: #006AA8;
             font-size: 50px; /* Increase the font size */
         }
@@ -149,9 +149,10 @@ function test_input($data) {
                 <input type="password" id="password" name="password">
                 <span class="error"><?php echo $passwordErr; ?></span>
             </div>
-            <button type="submit" style = "width: 150px; margin-top: 40px;">Login</button>
+            <button type="submit" style = "width: 150px; margin-top: 40px; background-color: #006AA8;">Login</button>
         </form>
-        <button class="register-btn" onclick="window.location.href='register.php';">Register</button>
+        <button class="register-btn" onclick="window.location.href='register.php';" style="background-color: #006AA8;">Register</button>
+    </div>
     </div>
 </body>
 </html>
