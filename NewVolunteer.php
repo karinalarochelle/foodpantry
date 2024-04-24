@@ -109,7 +109,7 @@ function test_input($data) {
     <header>
         <div class="header-left">
             <div class="logo">
-                <img src="imgs/svdp-transparent.png" alt="SVDP Logo">
+                <img src="svdp-transparent.png" alt="SVDP Logo">
             </div>
         </div>
     </header>

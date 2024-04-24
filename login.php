@@ -149,7 +149,7 @@ function test_input($data) {
                 <input type="password" id="password" name="password">
                 <span class="error"><?php echo $passwordErr; ?></span>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" style = "width: 150px; margin-top: 40px;">Login</button>
         </form>
         <button class="register-btn" onclick="window.location.href='register.php';">Register</button>
     </div>
