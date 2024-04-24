@@ -1,14 +1,10 @@
 <?php
-// Enable error reporting
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 // Include the database connection file
 require 'includes/database-connection.php';
 
 // Initialize variables to store error messages
-$usernameErr = $passwordErr = '';
-$username = $password = '';
+$usernameErr = $passwordErr = $confirmPasswordErr = $securityCodeErr = '';
+$username = $password = $confirmPassword = $securityCode = '';
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,6 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $usernameErr = "Username is required";
     } else {
         $username = test_input($_POST["username"]);
+        // Check if the username already exists
+        $stmt = $pdo->prepare("SELECT uname FROM Login WHERE uname = ?");
+        $stmt->execute([$username]);
+        $existingUser = $stmt->fetch();
+        if ($existingUser) {
+            $usernameErr = "Username already exists";
+        }
     }
 
     // Validate password
@@ -26,22 +29,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = test_input($_POST["password"]);
     }
 
-    // If both username and password are provided, proceed with authentication
-    if (!empty($username) && !empty($password)) {
-        // Prepare SQL statement to retrieve user from the database
-        $stmt = $pdo->prepare("SELECT uname, password FROM Login WHERE uname = ?");
-        $stmt->execute([$username]);
-        $user = $stmt->fetch();
-
-        // Verify the password
-        if ($user && password_verify($password, $user['password'])) {
-            // Password is correct, redirect to the desired page
-            header("Location: inventory.php");
-            exit;
-        } else {
-            // Password is incorrect, display an error message
-            $passwordErr = "Invalid username or password";
+    // Validate confirm password
+    if (empty($_POST["confirm_password"])) {
+        $confirmPasswordErr = "Please confirm password";
+    } else {
+        $confirmPassword = test_input($_POST["confirm_password"]);
+        if ($confirmPassword !== $password) {
+            $confirmPasswordErr = "Passwords do not match";
         }
+    }
+
+    // Validate security code
+    if (empty($_POST["security_code"])) {
+        $securityCodeErr = "Security code is required";
+    } else {
+        $securityCode = test_input($_POST["security_code"]);
+        if ($securityCode !== 'Group8') {
+            $securityCodeErr = "Security code is incorrect";
+        }
+    }
+
+    // If all fields are valid, proceed with user registration
+    if (empty($usernameErr) && empty($passwordErr) && empty($confirmPasswordErr) && empty($securityCodeErr)) {
+
+        // Find the smallest available volunteerID
+        $stmt = $pdo->query("SELECT volunteerID FROM Login ORDER BY volunteerID ASC");
+        $volunteerIDs = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+        // Find the smallest available volunteerID
+        $volunteerID = 1;
+        while (in_array($volunteerID, $volunteerIDs)) {
+            $volunteerID++;
+        }
+        
+        // Call MySQL function EncryptPassword to encrypt the password
+        $stmt = $pdo->prepare("INSERT INTO Login (uname, password, volunteerID) VALUES (?, EncryptPassword(?, ?), ?)");
+        $stmt->execute([$username, $password, 'CSC436', $volunteerID]);
+
+        // Redirect to NewVolunteer page after successful registration
+        header("Location: NewVolunteer.php");
+        exit;
     }
 }
 
@@ -59,7 +86,7 @@ function test_input($data) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toys R URI</title>
+    <title>Toys R URI - Register</title>
     <link rel="stylesheet" href="decorations.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +107,7 @@ function test_input($data) {
         .error {
             color: red;
         }
-        button[type="submit"], .register-btn {
+        button[type="submit"], button[type="button"] {
             display: block;
             margin: 10px auto; /* Center the buttons and add spacing */
             padding: 20px 40px; /* Add padding for better appearance */
@@ -91,7 +118,7 @@ function test_input($data) {
             border-radius: 5px; /* Add some rounded corners */
             cursor: pointer; /* Change cursor to pointer on hover */
         }
-        button[type="submit"]:hover, .register-btn:hover {
+        button[type="submit"]:hover, button[type="button"]:hover {
             background-color: #0056b3; /* Darker blue color on hover */
         }
     </style>
@@ -105,8 +132,8 @@ function test_input($data) {
         </div>
     </header>
 
-    <div class="login-container">
-        <h2>Login</h2>
+    <div class="register-container">
+        <h2>Register</h2>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <div class="form-group">
                 <label for="username">Username:</label>
@@ -118,9 +145,19 @@ function test_input($data) {
                 <input type="password" id="password" name="password">
                 <span class="error"><?php echo $passwordErr; ?></span>
             </div>
-            <button type="submit">Login</button>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password">
+                <span class="error"><?php echo $confirmPasswordErr; ?></span>
+            </div>
+            <div class="form-group">
+                <label for="security_code">Security Code:</label>
+                <input type="password" id="security_code" name="security_code">
+                <span class="error"><?php echo $securityCodeErr; ?></span>
+            </div>
+            <button type="submit">Register</button>
+            <button type="button" onclick="window.location.href='login.php';">Return to Login</button>
         </form>
-        <button class="register-btn" onclick="window.location.href='register.php';">Register</button>
     </div>
 </body>
 </html>
