@@ -127,7 +127,7 @@ function test_input($data) {
                 <ul>
                     <li><a style="font-size: 25px;"> Society of St. Vincent de Paul Ste. Manchester</a></li>
                 </ul>
-            </div>
+            
         </div>
     </header>
 
