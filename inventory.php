@@ -12,18 +12,28 @@ function get_all_data(PDO $pdo, string $tableName) {
 }
 
 // Fetch quantity for each item from the Items table
-function get_item_quantities(PDO $pdo, string $tableName) {
+/*function get_item_quantities(PDO $pdo, string $tableName) {
     $sql = "SELECT itemID, quantity FROM Items";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $quantities = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $quantities;
+}*/
+
+function get_item_quantities(PDO $pdo, string $tableName) {
+    $sql = "SELECT itemID, quantity FROM $tableName";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $quantities = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $quantities;
 }
 
+
 // Fetch all inventory data from different tables
 $otherNeeds = get_all_data($pdo, 'OtherNeeds');
 $food = get_all_data($pdo, 'Food');
 $clothing = get_all_data($pdo, 'Clothing');
+
 
 // Get quantities for each item from the Items table
 $itemQuantities = get_item_quantities($pdo, 'Items');
