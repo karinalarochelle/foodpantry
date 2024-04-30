@@ -110,17 +110,25 @@ if ($source) {
         </table>
         <!-- Add Donation Form -->
         <form id="addDonationForm" method="post">
-            <h2>Add Donation</h2>
-            <label for="donation_date">Donation Date (yyyy/mm/dd):</label>
-            <input type="text" id="donation_date" name="donation_date" pattern="\d{4}/\d{2}/\d{2}" placeholder="YYYY/MM/DD" required><br><br>
-            <label for="type_of_item">Type of Item:</label>
-            <input type="text" id="type_of_item" name="type_of_item" required><br><br>
-            <label for="quantity_of_item">Quantity:</label>
-            <input type="number" id="quantity_of_item" name="quantity_of_item" required><br><br>
-            <label for="source_of_donation">Source of Donation:</label>
-            <input type="text" id="source_of_donation" name="source_of_donation" required><br><br>
-            <button type="submit" name="add_donation">Add Donation</button>
-        </form>
+        <h2>Add Donation</h2>
+        <label for="donation_date">Donation Date (yyyy/mm/dd):</label>
+        <input type="text" id="donation_date" name="donation_date" pattern="\d{4}/\d{2}/\d{2}" placeholder="YYYY/MM/DD" required><br><br>
+        
+        <label for="type_of_item">Type of Item:</label>
+        <select id="type_of_item" name="type_of_item" required>
+            <option value="Food">Food</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+        
+        <label for="quantity_of_item">Quantity:</label>
+        <input type="number" id="quantity_of_item" name="quantity_of_item" required><br><br>
+        
+        <label for="source_of_donation">Source of Donation:</label>
+        <input type="text" id="source_of_donation" name="source_of_donation" required><br><br>
+        
+        <button type="submit" name="add_donation">Add Donation</button>
+</form>
     </div>
 
 </main>
