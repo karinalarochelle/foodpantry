@@ -1,6 +1,6 @@
 <?php
 // Include the database connection file
-include 'includes/database-connection.php';
+require 'includes/database-connection.php';
 
 // Initialize variables to store error messages
 $firstNameErr = $lastNameErr = $phoneNumberErr = '';
@@ -133,7 +133,7 @@ function test_input($data) {
                 <input type="text" id="phone_number" name="phone_number" value="<?php echo $phoneNumber; ?>">
                 <span class="error"><?php echo $phoneNumberErr; ?></span>
             </div>
-            <button type="submit" style = "margin-top: 50px; background-color:#006AA8;">Create Volunteer</button>
+            <button type="submit" onclick="window.location.href='inventory.php';" style="background-color: #006AA8;">Create Volunteer</button>
         </form>
     </div>
 </body>
