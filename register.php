@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt->rowCount() > 0) {
             // Redirect to NewVolunteer page after successful registration
             header("Location: new_volunteer.php");
-            exit;
+            exit; // Ensure no more output after this line
         } else {
             echo "Error: Registration failed.";
         }
