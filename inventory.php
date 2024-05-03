@@ -1,6 +1,6 @@
 <?php
 // Include the database connection script
-require 'includes/database-connection.php';
+include 'includes/database-connection.php';
 
 // Fetch all inventory data from the database
 function get_all_data(PDO $pdo, string $tableName) {
@@ -45,6 +45,8 @@ function merge_quantities($data, $quantities) {
     }
     return $mergedData;
 }
+
+
 
 $otherNeeds = merge_quantities($otherNeeds, $itemQuantities);
 $food = merge_quantities($food, $itemQuantities);
@@ -91,9 +93,11 @@ $clothing = merge_quantities($clothing, $itemQuantities);
 
 </header>
 
-<main>
+
 
     <div class="inventory-lookup-container">
+
+    
 
         <!-- Food -->
         <div class="inventory-details">

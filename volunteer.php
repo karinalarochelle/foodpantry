@@ -89,7 +89,7 @@
 
 <?php
 // Include the database connection script
-require 'includes/database-connection.php';
+include 'includes/database-connection.php';
 
 // Fetch volunteers data from the database
 function get_volunteers(PDO $pdo, $fname = null, $lname = null) {

@@ -1,5 +1,5 @@
 <?php
-require 'includes/database-connection.php';
+include 'includes/database-connection.php';
 
 // Get the client ID from the AJAX request
 $clientID = $_POST['clientID'];

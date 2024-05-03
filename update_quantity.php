@@ -1,6 +1,6 @@
 <?php
 // Include the database connection script
-require 'includes/database-connection.php';
+include 'includes/database-connection.php';
 
 // Check if itemID and quantity are set
 if (isset($_POST['itemID']) && isset($_POST['quantity'])) {

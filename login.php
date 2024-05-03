@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Include the database connection file
-require 'includes/database-connection.php';
+include 'includes/database-connection.php';
 
 // Initialize variables to store error messages
 $usernameErr = $passwordErr = '';

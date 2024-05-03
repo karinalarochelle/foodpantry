@@ -1,6 +1,6 @@
 <?php
 // Include the database connection script
-require 'includes/database-connection.php';
+include 'includes/database-connection.php';
 
 // Get the volunteer ID from the AJAX request
 $volunteerID = $_POST['volunteerID'];

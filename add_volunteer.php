@@ -1,5 +1,5 @@
 <?php
-require 'includes/database-connection.php';
+include 'includes/database-connection.php';
 
 // Get the data from the AJAX request
 $fname = $_POST['fname'];

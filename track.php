@@ -1,6 +1,6 @@
 <?php
 // Include the database connection script
-require 'includes/database-connection.php';
+include 'includes/database-connection.php';
 
 // Fetch all donation data from the database
 function get_all_donations(PDO $pdo) {

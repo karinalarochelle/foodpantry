@@ -1,6 +1,6 @@
 <?php
 // Include the database connection file
-require 'includes/database-connection.php';
+include 'includes/database-connection.php';
 
 // Initialize variables to store error messages
 $firstNameErr = $lastNameErr = $phoneNumberErr = '';
