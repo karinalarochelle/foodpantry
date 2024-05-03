@@ -165,8 +165,8 @@ function test_input($data) {
                 <input type="password" id="security_code" name="security_code">
                 <span class="error"><?php echo $securityCodeErr; ?></span>
             </div>
-            <button type="submit">Register</button>
-            <button type="button" onclick="window.location.href='login.php';">Return to Login</button>
+            <button type="submit" style="margin-top: 30px; margin-bottom: 20px; width: 200px; background-color: #006AA8;">Register</button>
+            <button type="button" onclick="window.location.href='login.php';" style="background-color: #006AA8;">Return to Login</button>
         </form>
     </div>
 </body>
