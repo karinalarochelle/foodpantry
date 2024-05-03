@@ -99,18 +99,18 @@ function test_input($data) {
         input[type="text"],
         input[type="password"] {
             width: 400px; /* Enlarge the width of the input fields */
-            padding: 20px; /* Add padding for better appearance */
-            margin: 0 auto; /* Center the input fields */
+            padding: 12px; /* Add padding for better appearance */
             display: block; /* Ensure input fields are displayed as block elements */
             font-size: 18px; /* Enlarge the font size */
         }
         .error {
             color: red;
+            text-align: center;
         }
         button[type="submit"], button[type="button"] {
             display: block;
             margin: 10px auto; /* Center the buttons and add spacing */
-            padding: 20px 40px; /* Add padding for better appearance */
+            padding: 15px 30px; /* Add padding for better appearance */
             font-size: 18px; /* Enlarge the font size */
             background-color: #007bff; /* Blue background color */
             color: #fff; /* White text color */
@@ -121,6 +121,10 @@ function test_input($data) {
         button[type="submit"]:hover, button[type="button"]:hover {
             background-color: #0056b3; /* Darker blue color on hover */
         }
+        .register-container {
+            width: 60%;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -129,43 +133,40 @@ function test_input($data) {
             <div class="logo">
                 <img src="imgs/svdp-transparent.png" alt="SVDP Logo">
             </div>
-                <ul>
-                    <li><a style="font-size: 25px;"> Society of St. Vincent de Paul Ste. Manchester</a></li>
-                </ul>
-            </div>
+            <ul>
+                <li><a style="font-size: 25px;"> Society of St. Vincent de Paul Ste. Manchester</a></li>
+            </ul>
         </div>
     </header>
 
     <div class="register-container">
-        <div class="form-group" style="text-align: center;">
-            <img src="imgs/svdp-transparent.png" alt="SVDP Logo" style="display: block; margin: 0 auto; max-width: 200px; align: center; margin-top: 80px; margin-bottom: 20px">
-        </div>
+        <div class="form-group">
+            <img src="imgs/svdp-transparent.png" alt="SVDP Logo" style="display: block; margin: 0 auto; max-width: 200px; margin-top: 80px; margin-bottom: 20px">
         </div>
         <h2 style="color: #006AA8; text-align: center; font-size: 44px; margin-top: 20px; margin-bottom: 30px;">Register</h2>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" value="<?php echo $username; ?>">
-            <span class="error"><?php echo $usernameErr; ?></span>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="<?php echo $username; ?>">
+                <span class="error"><?php echo $usernameErr; ?></span>
             </div>
             <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-            <span class="error"><?php echo $passwordErr; ?></span>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <span class="error"><?php echo $passwordErr; ?></span>
             </div>
             <div class="form-group">
-            <label for="confirm_password">Confirm Password:</label>
-            <input type="password" id="confirm_password" name="confirm_password">
-            <span class="error"><?php echo $confirmPasswordErr; ?></span>
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password">
+                <span class="error"><?php echo $confirmPasswordErr; ?></span>
             </div>
             <div class="form-group">
-            <label for="security_code">Security Code:</label>
-            <input type="password" id="security_code" name="security_code">
-            <span class="error"><?php echo $securityCodeErr; ?></span>
+                <label for="security_code">Security Code:</label>
+                <input type="password" id="security_code" name="security_code">
+                <span class="error"><?php echo $securityCodeErr; ?></span>
             </div>
-            <button type="submit" style="margin-top: 30px; margin-bottom: 20px; width: 200px; background-color: #006AA8;">Register</button>
-            <button type="button" onclick="window.location.href='login.php';" style="background-color: #006AA8;">Return to Login</button>
-        </form>
+            <button type="submit">Register</button>
+            <button type="button" onclick="window.location.href='login.php';">Return to Login</button>
         </form>
     </div>
 </body>
