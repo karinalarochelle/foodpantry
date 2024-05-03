@@ -70,10 +70,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Call MySQL function EncryptPassword to encrypt the password
         $stmt = $pdo->prepare("INSERT INTO Login (uname, password, volunteerID) VALUES (?, EncryptPassword(?, ?), ?)");
         $stmt->execute([$username, $password, 'CSC436', $volunteerID]);
-
-        // Redirect to NewVolunteer page after successful registration
-        header("Location: new_volunteer.php");
-        exit;
+        
+        // Check if registration was successful
+        if ($stmt->rowCount() > 0) {
+            // Redirect to NewVolunteer page after successful registration
+            header("Location: new_volunteer.php");
+            exit;
+        } else {
+            echo "Error: Registration failed.";
+        }
     }
 }
 
